@@ -1,0 +1,56 @@
+==================================================================
+ DNS TRAFFIC ANALYSIS REPORT
+==================================================================
+ File            : samples/mixed.pcap
+ Packets read    : 1481
+ DNS queries     : 1481
+ Unique sources  : 6
+ Unique domains  : 251
+ Capture length  : 566 seconds
+
+--- Top 10 queried domains ---
+   477  google.com
+   150  tunnel-lab.test
+   131  gstatic.com
+   111  github.com
+   107  youtube.com
+   105  ytimg.com
+    91  instagram.com
+    89  facebook.com
+    19  wikipedia.org
+    14  cloudfront.net
+
+--- Query types ---
+ A      1140
+ AAAA   156
+ TXT    104
+ NULL   46
+ HTTPS  35
+
+--- [1] Suspicious domains (long / random-looking): 199 ---
+ LONG_DOMAIN,RANDOM_LOOKING H=4.72  gfrmc2pvokyyfxze2ya3k767kb55k636rocjhbnqlue4gndi.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.70  b2uf2e2whohe57wu4t4drtnko4poobjs3qcgeizznfmdsvyx.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.70  4bapcmc766kwgt3qlvieidab7t2oxofudxulfezl7ungwyhv.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.69  e35y4hv6ojob4cu3azj4dpbwsm4zetrvdgqls75uicd2flud.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.69  fk3sunkul3ey26i4yqllmap2z5zhgz3rxcs7gj2fcjimw5av.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.67  ykelgvz3pp3o72zjpydd66p7ubc75skbkd4xn6nitfttwroa.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.66  agmpuqr5jouidjpy34obk6ktbzy2sxz4qefwj2slq46fhogq.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.65  hadg37doatr5alefi2s2z2qdxwb6pcqvjw6u25brcuntw53l.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.65  apm3yjogrni5m2vdtybehwocuvkuo4ctww5nf7mmfljvlnxk.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.65  vtprkqgpcdbzfuc54mlamjwqgnmy6vnkup2nhjshuzuy3diz.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.63  erwv66x2bkwg7gfoe3ydst5nhzhdx4mi5ttvr2gonvcwyysq.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.63  qtwnnw46snw7xvybiyoevi57ci34j56zq2mval4hrwpk3tyz.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.62  uzi2whgh5vnv7msnqy3r5crtfy73k3i2xg4ug2tao3dkuamb.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.62  ipgtnw7bcpr5hkxktm75kvewgofap6hpqu4gz3pu6zcbdldg.c2.tunnel-lab.test
+ LONG_DOMAIN,RANDOM_LOOKING H=4.62  a2nqknmivmlswomtepfnvbjq5mcq6z2w3ccylre7hxc2japy.c2.tunnel-lab.test
+ ... and 184 more (see flagged_domains.csv)
+
+--- [2] High query rate sources: 2 ---
+ 192.168.56.152   900 queries in 60s (~900/min)
+ 192.168.56.151   150 queries in 60s (~150/min)
+
+--- [3] DNS tunnelling suspects: 1 ---
+ tunnel-lab.test: 150 queries, 150 unique sub-domains, avg len 51, avg H 4.47, TXT/NULL 100%
+   from 192.168.56.151  ->  many long unique sub-domains; high-entropy sub-domains; mostly TXT/NULL queries
+==================================================================
+Results saved in: output/mixed/

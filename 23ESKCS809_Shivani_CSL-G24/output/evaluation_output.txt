@@ -1,0 +1,33 @@
+Ground truth: 60 DGA domains + 150 tunnel names
+
+A) Final detector on mixed.pcap
+setting                              TP   FP   FN    Prec  Recall     F1
+allowlist ON (default)              199    0   11    1.00    0.95   0.97
+allowlist OFF                       199    5   11    0.98    0.95   0.96
+   false positives: ['d2z9xk4f7ab1cq.cloudfront.net', 'd3e54v103j8qbb.cloudfront.net', 'dualstack.elb-prod-1234567890.us-east-1.elb.amazonaws.com', 'ec2-54-12-34-56.compute-1.amazonaws.com', 'r3---sn-ab5l6n7y.googlevideo.com']
+
+B) DGA-only detection (tunnel & length checks off): entropy alone vs combined tests
+setting                            DGA found   FP
+entropy only, thr=2.8                  60/60    4
+entropy only, thr=3.0                  60/60    3
+entropy only, thr=3.3                  47/60    2
+entropy only, thr=3.6                  11/60    0
+entropy only, thr=4.0                   0/60    0
+combined tests (default)               49/60    0
+
+C) Rate-limit sensitivity (window = 60 s)
+limit=   20  alerts=6  sources=['192.168.56.101', '192.168.56.102', '192.168.56.103', '192.168.56.150', '192.168.56.151', '192.168.56.152']  normal-clients-flagged=3
+limit=   40  alerts=2  sources=['192.168.56.151', '192.168.56.152']  normal-clients-flagged=0
+limit=  100  alerts=2  sources=['192.168.56.151', '192.168.56.152']  normal-clients-flagged=0
+limit=  200  alerts=1  sources=['192.168.56.152']  normal-clients-flagged=0
+limit=  500  alerts=1  sources=['192.168.56.152']  normal-clients-flagged=0
+limit= 1000  alerts=0  sources=[]  normal-clients-flagged=0
+
+D) normal.pcap only (no attacks present)
+allowlist ON    flagged domains=0  rate alerts=0  tunnel alerts=0
+allowlist OFF   flagged domains=5  rate alerts=0  tunnel alerts=0
+     d2z9xk4f7ab1cq.cloudfront.net ['RANDOM_LOOKING']
+     r3---sn-ab5l6n7y.googlevideo.com ['RANDOM_LOOKING']
+     ec2-54-12-34-56.compute-1.amazonaws.com ['RANDOM_LOOKING']
+     dualstack.elb-prod-1234567890.us-east-1.elb.amazonaws.com ['LONG_DOMAIN', 'RANDOM_LOOKING']
+     d3e54v103j8qbb.cloudfront.net ['RANDOM_LOOKING']

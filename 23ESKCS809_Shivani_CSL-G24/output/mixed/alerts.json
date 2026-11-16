@@ -1,0 +1,36 @@
+{
+  "rate_alerts": [
+    {
+      "source": "192.168.56.152",
+      "peak_queries": 900,
+      "window_s": 60,
+      "per_minute": 900,
+      "window_start": 1794737150.0
+    },
+    {
+      "source": "192.168.56.151",
+      "peak_queries": 150,
+      "window_s": 60,
+      "per_minute": 150,
+      "window_start": 1794737000.0
+    }
+  ],
+  "tunnel_alerts": [
+    {
+      "domain": "tunnel-lab.test",
+      "queries": 150,
+      "unique_subdomains": 150,
+      "avg_subdomain_len": 51,
+      "avg_entropy": 4.47,
+      "txt_null_share": 1.0,
+      "sources": [
+        "192.168.56.151"
+      ],
+      "reasons": [
+        "many long unique sub-domains",
+        "high-entropy sub-domains",
+        "mostly TXT/NULL queries"
+      ]
+    }
+  ]
+}

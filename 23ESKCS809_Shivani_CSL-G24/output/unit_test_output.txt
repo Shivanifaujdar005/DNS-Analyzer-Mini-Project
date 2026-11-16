@@ -1,0 +1,22 @@
+test_cdn_allowlisted (test_analyzer.TestDomainChecks.test_cdn_allowlisted) ... ok
+test_long_domain_flagged (test_analyzer.TestDomainChecks.test_long_domain_flagged) ... ok
+test_normal_domains_not_flagged (test_analyzer.TestDomainChecks.test_normal_domains_not_flagged) ... ok
+test_random_domain_flagged (test_analyzer.TestDomainChecks.test_random_domain_flagged) ... ok
+test_one_bit_for_two_chars (test_analyzer.TestEntropy.test_one_bit_for_two_chars) ... ok
+test_random_higher_than_word (test_analyzer.TestEntropy.test_random_higher_than_word) ... ok
+test_zero_for_same_char (test_analyzer.TestEntropy.test_zero_for_same_char) ... ok
+test_roundtrip (test_analyzer.TestParser.test_roundtrip) ... ok
+test_pcapng_reader (test_analyzer.TestPcapng.test_pcapng_reader) ... /home/claude/dns_project/test_analyzer.py:92: ResourceWarning: unclosed file <_io.BufferedWriter name='/tmp/tmpmr5xp1vp/t.pcapng'>
+  open(path, "wb").write(shb + idb + epb)
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_flood_detected_and_normal_ignored (test_analyzer.TestRate.test_flood_detected_and_normal_ignored) ... ok
+test_simple (test_analyzer.TestSplit.test_simple) ... ok
+test_two_level_suffix (test_analyzer.TestSplit.test_two_level_suffix) ... ok
+test_normal_subdomains_not_flagged (test_analyzer.TestTunnel.test_normal_subdomains_not_flagged) ... ok
+test_tunnel_detected (test_analyzer.TestTunnel.test_tunnel_detected) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.006s
+
+OK

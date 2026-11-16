@@ -1,0 +1,34 @@
+==================================================================
+ DNS TRAFFIC ANALYSIS REPORT
+==================================================================
+ File            : samples/normal.pcap
+ Packets read    : 371
+ DNS queries     : 371
+ Unique sources  : 3
+ Unique domains  : 41
+ Capture length  : 566 seconds
+
+--- Top 10 queried domains ---
+   111  google.com
+    24  github.com
+    23  youtube.com
+    19  wikipedia.org
+    18  gstatic.com
+    15  ytimg.com
+    14  cloudfront.net
+    11  stackoverflow.com
+    11  amazonaws.com
+    10  instagram.com
+
+--- Query types ---
+ A      180
+ AAAA   156
+ HTTPS  35
+
+--- [1] Suspicious domains (long / random-looking): 0 ---
+
+--- [2] High query rate sources: 0 ---
+
+--- [3] DNS tunnelling suspects: 0 ---
+==================================================================
+Results saved in: output/normal/
